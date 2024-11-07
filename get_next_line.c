@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:46:39 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/06 17:39:58 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:54:58 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,4 +97,5 @@ char	*get_next_line(int fd)
 		return (NULL);
 	next_line = ft_line(list);
 	ft_lstadd(&list);
+	return (next_line);
 }
