@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:46:48 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/06 17:42:45 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/07 10:44:12 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,5 +79,47 @@ char	*ft_line(t_list *list)
 
 void	ft_lstadd(t_list **list)
 {
-    
+    t_list *last_node;
+    t_list *node;
+    int i;
+    int k;
+    char *buf;
+
+    buf = malloc(BUFFER_SIZE + 1);
+    node = malloc(sizeof(t_list));
+    if (buf == NULL || node == NULL)
+        return ;
+    last_node = ft_lstlast(*list);
+    i = 0;
+	k = 0;
+    while (last_node->buf[i] && last_node->buf[i] != '\n')
+            i++;
+    while (last_node->buf[i])
+            buf[k++] = last_node->buf[i++];
+    buf[k] = '\0';
+    node->buf = buf;
+    node->next = NULL;
+    ft_clear_list(list, node, buf);
+}
+void ft_clear_list(t_list **list, t_list *node, char *buf)
+{
+   t_list *tmp;
+
+   if (*list == NULL)
+   		return ;
+	while (*list)
+	{
+		tmp = (*list)->next;
+		free((*list)->buf);
+		free(*list);
+		*list = tmp;
+	}
+	*list = NULL;
+	if(node->buf[0])
+		*list = node;
+	else
+	{
+		free(buf);
+		free(node);
+	}
 }

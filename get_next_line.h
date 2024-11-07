@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:46:53 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/06 17:38:20 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/06 18:04:09 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ char				*ft_line(t_list *list);
 int					ft_newline(t_list *list);
 void				ft_lstadd(t_list **list);
 void				ft_copy(t_list *list, char *str);
-
+void 				ft_clear_list(t_list **list, t_list *node, char *buf);
 #endif
