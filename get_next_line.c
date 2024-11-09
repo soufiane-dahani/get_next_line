@@ -99,3 +99,7 @@ char	*get_next_line(int fd)
 	ft_lstadd(&list);
 	return (next_line);
 }
+int main ()
+{
+
+}
