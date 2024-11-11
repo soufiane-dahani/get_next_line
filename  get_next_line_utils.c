@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:46:48 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/07 10:55:55 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/08 10:01:15 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	ft_lstadd(t_list **list)
     node->next = NULL;
     ft_clear_list(list, node, buf);
 }
+
 void ft_clear_list(t_list **list, t_list *node, char *buf)
 {
    t_list *tmp;

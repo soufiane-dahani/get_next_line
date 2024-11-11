@@ -1,0 +1,4 @@
+Hello, world!
+This is a test file.
+Each line is read separately.
+End of the test.

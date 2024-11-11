@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/05 10:46:39 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/07 10:54:58 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/11 16:02:48 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_check_line(t_list *list)
 		{
 			if (list->buf[i] == '\n')
 				return (1);
-			i++;
+			++i;
 		}
 		list = list->next;
 	}
@@ -95,7 +95,11 @@ char	*get_next_line(int fd)
 	create_new_list(&list, fd);
 	if (list == NULL)
 		return (NULL);
-	next_line = ft_line(list);
-	ft_lstadd(&list);
+	next_line = list->buf;
 	return (next_line);
+}
+#include <stdio.h>
+int main() {
+	int fd = open("test.txt", O_RDONLY);
+	printf("%s", get_next_line(fd));
 }
