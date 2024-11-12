@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:52:22 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/12 12:52:23 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/12 16:09:56 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+		if (!buffer)
+		return (NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
 		free(buffer);
@@ -76,8 +78,6 @@ char	*get_next_line(int fd)
 		remains = NULL;
 		return (NULL);
 	}
-	if (!buffer)
-		return (NULL);
 	line = ft_fill_line_buffer(fd, remains, buffer);
 	free(buffer);
 	buffer = NULL;
@@ -85,4 +85,9 @@ char	*get_next_line(int fd)
 		return (NULL);
 	remains = ft_separate_lines(line);
 	return (line);
+}
+int main (){
+	int fd = open ("example2.txt", O_RDONLY);
+	printf("%s", get_next_line(fd));
+	printf("%s", get_next_line(fd));
 }
