@@ -6,7 +6,7 @@
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/12 12:52:32 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/13 12:32:49 by sodahani         ###   ########.fr       */
+/*   Updated: 2024/11/13 22:36:37 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len] && s)
+	if (!s)
+		return (0);
+	while (s[len])
 		len++;
 	return (len);
 }
