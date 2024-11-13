@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/12 12:52:42 by sodahani          #+#    #+#             */
-/*   Updated: 2024/11/12 12:52:43 by sodahani         ###   ########.fr       */
+/*   Created: 2024/08/12 12:52:42 by sodahani          #+#    #+#             */
+/*   Updated: 2024/11/13 12:55:39 by sodahani         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ char	*get_next_line(int fd)
 	char		*line;
 
 	buffer = (char *)malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!buffer)
+		return (NULL);
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
 	{
 		free(buffer);
@@ -76,8 +78,6 @@ char	*get_next_line(int fd)
 		remains[fd] = NULL;
 		return (NULL);
 	}
-	if (!buffer)
-		return (NULL);
 	line = ft_fill_line_buffer(fd, remains[fd], buffer);
 	free(buffer);
 	buffer = NULL;
