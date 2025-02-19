@@ -5,6 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+<<<<<<< HEAD
 /*   Created: 2024/08/12 12:52:42 by sodahani          #+#    #+#             */
 /*   Updated: 2024/11/13 12:55:39 by sodahani         ###   ########.fr       */
 /*                                                                            */
@@ -86,3 +87,9 @@ char	*get_next_line(int fd)
 	remains[fd] = ft_separate_lines(line);
 	return (line);
 }
+=======
+/*   Created: 2024/11/05 10:49:51 by sodahani          #+#    #+#             */
+/*   Updated: 2024/11/05 10:49:52 by sodahani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+>>>>>>> main

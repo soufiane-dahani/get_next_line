@@ -5,6 +5,7 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: sodahani <sodahani@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
+<<<<<<< HEAD
 /*   Created: 2024/08/12 12:52:37 by sodahani          #+#    #+#             */
 /*   Updated: 2024/11/13 19:20:36 by sodahani         ###   ########.fr       */
 /*                                                                            */
@@ -28,3 +29,9 @@ size_t	ft_strlen(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strdup(const char *s1);
 #endif
+=======
+/*   Created: 2024/11/05 10:50:07 by sodahani          #+#    #+#             */
+/*   Updated: 2024/11/05 10:50:08 by sodahani         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+>>>>>>> main
